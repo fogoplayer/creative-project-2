@@ -73,7 +73,6 @@
           var sound = new Audio();
           let info = val.innerHTML;
           if (info.indexOf(",") != -1) {
-            debugger;
             info = info.substr(0, info.indexOf(","));
           }
           if (info.indexOf(":") != -1) {
@@ -119,14 +118,16 @@
       </script>
       <form>
       <!-- <fieldset> -->
-      <label>Word:<input type="text" id="daWord" /></label>
+      <label>Word:<input class="search" type="text" id="daWord" /></label>
       <!-- <label ><select name="content-type" id="content-type-select"></select></label> -->
-      <button id="woo">Translate</button>
+      <button id="woo" class="bton">Translate</button>
       <!-- </fieldset> -->
       </form>
 
-      <section class="results">
-        <p id="results"></p>
+      <section class="results" id="results">
+        <h1>Try it out!</h1>
+        <p>Note that not all of the translations have an audio on file</p>
+        <!-- <p id="results"></p> -->
       </section>
     </main>
 
@@ -134,7 +135,7 @@
       <p class="float-end"><a href="#">Back to top</a></p>
       <p>
         &copy; 2021 Jacob McKenzie & Zarin Loosli, Inc. &middot;
-        <a href="https://github.com/NotTopTaco/Creative1">Repository</a>
+        <a href="https://github.com/fogoplayer/creative-project-2">Repository</a>
       </p>
     </footer>
     <script src="translator.js"></script>

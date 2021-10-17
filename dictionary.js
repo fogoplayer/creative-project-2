@@ -50,6 +50,7 @@ function writeDictData(data) {
       <h1>${data[0].meta.id} <span class="phonetic"> (${
         data[0].hwi.prs[0].mw
       })</span></h1>
+      <hr>
       <h3>Definition</h3>
         ${`<span class="part-of-speech">${data[0].fl}</span>
           <p>${replaceDef(def[1].dt[0][1])}</p>`}

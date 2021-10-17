@@ -36,7 +36,8 @@ function onClick(e) {
         var outputTxt = "";
         outputTxt = `
       <h1>${daWord} <span class="phonetic"> (${json[0].hwi.prs[0].mw})</span> </h1>
-      <h2>Translations</h2>
+      <hr>
+      <h2>Translations <span class="audioDesc">Press any for  &#128264;</span></h2>
       <ol>
       `;
         let wordLen = daWord.length;

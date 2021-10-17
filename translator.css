@@ -6,9 +6,20 @@ form {
   background: var(--red);
   padding: 1em;
   color: white;
-
+  font-weight: 700;
   display: flex;
   justify-content: center;
+}
+
+form label {
+  background: black;
+  padding-left: 0.25em;
+  border-radius: 15px 50px 30px 15px;
+}
+
+.search {
+  margin-left: 0.25em;
+  margin-right: 0;
 }
 
 .results {
@@ -18,4 +29,97 @@ form {
 .sound {
   color: black;
   font-style: normal;
+  text-decoration: none;
+}
+
+.sound:hover {
+  color: red;
+}
+
+.phonetic {
+  color: #495057;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+ol {
+  clear: both;
+  list-style: none;
+  padding-left: 2%;
+}
+ol li {
+  font-size: 1.2rem;
+  margin: 2em 0;
+  padding-left: 3em;
+  padding-top: 1em;
+  display: block;
+  position: relative;
+  counter-increment: inst;
+}
+ol li::before {
+  content: counter(inst);
+
+  background: red;
+  color: #fff;
+
+  font-size: 1em;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 1px 1px red;
+
+  border-radius: 0 0.675em 0.675em 0;
+  font-size: 1.5em;
+  text-align: center;
+
+  padding-top: 0;
+  padding-left: 2.25%;
+  left: -5%;
+  top: -0.65em;
+  height: 1.35em;
+  width: 1.35em;
+  position: absolute;
+
+  transition: all 0.2s ease-in-out;
+
+  z-index: -1;
+}
+@media (min-width: 33em) {
+  ol li:before {
+    border-radius: 50%;
+    font-size: 1.5em;
+    height: 1.35em;
+    margin-left: 2.5%;
+    padding-left: 0;
+    padding-top: 0;
+    top: -0.15em;
+    width: 1.35em;
+    z-index: -1;
+  }
+}
+.audioDesc {
+  font-size: 0.7em;
+}
+
+.part-of-speech {
+  color: red;
+}
+
+.bton {
+  background-color: black !important;
+  color: white;
+  border-radius: 0px 5px 5px 0px;
+  font-weight: 700;
+}
+.bton:hover {
+  color: red;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: red;
 }
