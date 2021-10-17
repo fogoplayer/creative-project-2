@@ -11,6 +11,10 @@ form {
   justify-content: center;
 }
 
+.results {
+  padding: 1em;
+}
+
 .sound {
   color: black;
   font-style: normal;
