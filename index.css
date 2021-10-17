@@ -37,12 +37,13 @@ body {
   margin-bottom: 20%;
 }
 
-button {
-  background-color: slategray !important;
+#selBut {
+  background-color: #d3d3d3 !important;
   width: 100%;
   border-color: black !important;
+  color: black !important;
 }
-button:hover {
+#selBut:hover {
   color: rgb(218, 49, 49) !important;
   border-color: red !important;
   background-color: white !important;
