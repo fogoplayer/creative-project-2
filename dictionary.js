@@ -26,43 +26,42 @@ function getDictData(word) {
  */
 function writeDictData(data) {
   const output = document.querySelector(".results");
-
-  // Webster returns suggestions
-  if (typeof data[0] === "string") {
-    output.innerHTML = `Sorry, I don't know that word. Did you mean: <ul><li>
+  try {
+    // Webster returns suggestions
+    if (typeof data[0] === "string") {
+      output.innerHTML = `Sorry, I don't know that word. Did you mean: <ul><li>
     ${data.join(`</li><li>`)}
     </li></ul>`;
-  }
-
-  // Webster returns nothing
-  else if (data.length === 0) {
-    output.innerHTML = `Sorry, I don't know that word. Try again?`;
-  }
-
-  // Webster finds it
-  else if (data[0].hwi) {
-    let def = data[0].def[0].sseq;
-    while (typeof def[0] !== "string") {
-      def = def[0];
     }
-    console.log(def);
-    output.innerHTML = `
+
+    // Webster returns nothing
+    else if (data.length === 0) {
+      output.innerHTML = `Sorry, I don't know that word. Try again?`;
+    }
+
+    // Webster finds it
+    else if (data[0].hwi) {
+      let def = data[0].def[0].sseq;
+      while (typeof def[0] !== "string") {
+        def = def[0];
+      }
+      console.log(def);
+      output.innerHTML = `
       <h1>${data[0].meta.id}</h1>
-      <h3>Definitions</h3>
+      <h3>Definition</h3>
         ${`<span class="part-of-speech">${data[0].fl}</span>
           <p>${replaceDef(def[1].dt[0][1])}</p>`}
-      <h3>Examples</h3>
-      <p>${""}</p>
+    `;
+    }
+  } catch (error) {
+    output.innerHTML = `
+      Sorry, there was an error. Please try another word.
     `;
   }
   return;
 }
 
 function replaceDef(str) {
-  while (typeof str[0] !== "string") {
-    str = str[0];
-  }
-  str = str[1];
   console.log("str:", str);
   str = str.replace(/{bc}/g, ":");
 
