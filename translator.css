@@ -1,3 +1,16 @@
+:root {
+  --red: #f0091d;
+}
+
+form {
+  background: var(--red);
+  padding: 1em;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+}
+
 .sound {
   color: black;
   font-style: normal;
